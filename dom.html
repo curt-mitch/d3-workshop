@@ -26,15 +26,11 @@
   </ol>
   <script src="https://d3js.org/d3.v4.js"></script>
   <script>
-    d3.selectAll('p')
-        .style('font-size', function () {
-          return Math.floor(Math.random() * 50) + 'px';
-        })
-        .style('background-color', 'black')
-        .style('color', 'orange');
-
-    d3.select('li')
-        .style('padding', '20px');
+    d3.selectAll('li').on('click', function(d, i) {
+      var listItem = d3.select(d3.event.target);
+      var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      listItem.style('color', randomColor);
+    });
   </script>
 </body>
 </html>
