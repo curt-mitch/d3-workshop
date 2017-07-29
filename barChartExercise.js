@@ -44,7 +44,7 @@ rects.attr('x', function (d) { return xScale(d.name)})
       .attr('fill', function (d) { return colorScale(partisanScore(d)); });
 
 svg.append('g')
-    .attr('transform', `translate(${padding.top}, ${padding.top - padding.bottom})`)
+    .attr('transform', `translate(${padding.left}, ${padding.top - padding.bottom})`)
     .call(d3.axisLeft(yScale));
 
 svg.append('g')
