@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Putting the Data in d3</title>
+</head>
+<body>
+  <h1>Read this important article!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore perferendis voluptatibus eaque expedita aspernatur, neque quo ratione aut vero, cumque, dolores similique repellendus saepe sapiente, voluptas veniam. Expedita, eius, distinctio.</p>
+  <p>Sapiente maxime, unde esse quasi eius facere! Numquam nam officiis dolorem quo dignissimos nobis id quae blanditiis neque, magni similique, aspernatur eligendi quia. Voluptatum architecto perspiciatis amet, deleniti, sit earum.</p>
+  <p>Nam maiores error sequi fugiat itaque, quae, odit quo officiis est atque laborum officia, doloremque. Molestiae recusandae maxime repellat aperiam tenetur eveniet sunt ipsum id aliquam, possimus deserunt, laudantium vero?</p>
+  <p>Officia libero, est sapiente sint quaerat eaque veritatis neque quod animi nobis nostrum, quisquam rem ea sunt nihil optio earum voluptate ut non ducimus. Maiores soluta, nulla! Quis, possimus quasi?</p>
+  <p>Voluptas dicta ducimus nulla, magni id quis ab ratione cupiditate? Necessitatibus exercitationem hic, saepe, voluptatem dolor quibusdam est autem nulla praesentium cumque assumenda illo similique ipsam culpa voluptates, minus! Neque.</p>
+  <p>Officiis, veniam, tenetur. Blanditiis consequatur ab fugit veniam totam? Est atque ratione cum odio numquam, animi repellat, dolor nam molestiae facilis harum minus voluptates aspernatur adipisci soluta reprehenderit officia alias.</p>
+  <p>Earum obcaecati magnam libero ad molestiae corrupti non, doloribus molestias blanditiis atque fugit voluptate eveniet, quae adipisci provident, repellendus ratione facilis voluptas ipsam? Dolore, repudiandae. Itaque repudiandae illo architecto quaerat.</p>
+  <p>Eius impedit minima sapiente sit ut voluptate deleniti tempora, repellendus sed aliquam. A nobis tempora aliquam commodi, voluptate necessitatibus quaerat accusantium incidunt error, iste. Maiores autem mollitia rerum asperiores repellat.</p>
+  <p>Neque et magnam ea corporis placeat, recusandae voluptatem quos in cum numquam, beatae animi assumenda. Praesentium non sequi, perspiciatis odit. Quaerat dolorem labore sint dolore, nemo cum amet dolor in?</p>
+  <p>Adipisci, natus omnis reprehenderit. Saepe repudiandae accusamus ab? Sapiente eveniet minus ipsam minima quod quisquam assumenda officiis architecto voluptas iure ut odit ab ratione voluptatibus, est quidem cumque voluptate veritatis!</p>
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script>
+    d3.selectAll('p')
+      .data([4, 8, 12, 16, 20, 24, 28, 32, 36, 40])
+      .style('font-size', function(d) {
+        return d + 'px';
+      });
+  </script>
+</body>
+</html>
