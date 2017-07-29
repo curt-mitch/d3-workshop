@@ -39,8 +39,8 @@ var rects = svg.selectAll('rect')
 
 rects.attr('x', function (d) { return xScale(d.name)})
       .attr('width', xScale.bandwidth())
-      .attr('y', function (d) { return yScale(d.medianIncome) - padding.bottom + padding.top; })
-      .attr('height', function (d) { return height - yScale(d.medianIncome); })
+      .attr('y', height - padding.bottom)
+      .attr('height', 0)
       .attr('fill', function (d) { return colorScale(partisanScore(d)); });
 
 svg.append('g')
@@ -53,3 +53,31 @@ svg.append('g')
   .selectAll('text')
     .attr('transform', `rotate(90) translate(${padding.top},${(-3 - xScale.bandwidth() / 2)})`)
     .style('text-anchor', 'start');
+
+var tooltipDiv = d3.select('body')
+                    .append('div')
+                    .attr('class', 'tooltip')
+                    .style('opacity', 0);
+
+rects.on('mouseover', function(d) {
+  tooltipDiv.html(`<p>${d.name}</p><p>$${d.medianIncome}</p>`);
+
+  var width = parseInt(tooltipDiv.style('width'));
+  var height = parseInt(tooltipDiv.style('height'));
+
+  tooltipDiv.style('left', `${d3.event.pageX - (width / 2)}px`);
+  tooltipDiv.style('top', `${d3.event.pageY - height - 20}px`);
+
+  tooltipDiv.style('opacity', 1);
+})
+  .on('mouseout', function() {
+    tooltipDiv.style('opacity', 0);
+  });
+
+var t = d3.transition()
+          .duration(2000);
+
+rects.transition(t)
+    .ease(d3.easeExpOut)
+    .attr('y', function (d) { return yScale(d.medianIncome) - padding.bottom + padding.top; })
+    .attr('height', function (d) { return height - yScale(d.medianIncome); });
