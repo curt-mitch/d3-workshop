@@ -29,7 +29,9 @@
     d3.selectAll('p')
         .style('font-size', function () {
           return Math.floor(Math.random() * 50) + 'px';
-        });
+        })
+        .style('background-color', 'black')
+        .style('color', 'orange');
 
     d3.select('li')
         .style('padding', '20px');
