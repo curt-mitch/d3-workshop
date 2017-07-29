@@ -1,6 +1,6 @@
 const width = 500;
 const height = 500;
-const padding = 15;
+const padding = 50;
 const xMin = d3.min(states, function(d) { return d.population / d.area; });
 const xMax = d3.max(states, function(d) { return d.population / d.area; });
 const yMin = d3.min(states, function(d) { return d.medianIncome; });
@@ -44,3 +44,11 @@ svg.selectAll("circle")
    .on('mouseover', function(d) {
       return console.log(d.name);
    });
+
+svg.append('g')
+  .attr('transform', `translate(${padding}, 0)`)
+  .call(d3.axisLeft(yScale));
+
+svg.append('g')
+  .attr('transform', `translate(0, ${height - padding})`)
+  .call(d3.axisBottom(xScale));
