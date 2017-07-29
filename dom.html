@@ -24,9 +24,29 @@
     <li>Supports graph animations.</li>
     <li>Makes drawing graph axes a breeze!</li>
   </ol>
+  <!-- Create an svg that has a triangle inside of a square inside of a circle. -->
+  <!-- Put all of those elements in a group with some shared properties on the grou -->
+  <svg height="440" width="440">
+    <g stroke="black" stroke-width="3">
+      <circle
+        cx="220"
+        cy="220"
+        r="150"
+        fill="blue"/>
+      <rect
+        x="150"
+        y="150"
+        width="150"
+        height="150"
+        fill="gold"/>
+      <path
+        d="M170 170 L170 280 L280 280Z"
+        fill="rgb(0,255,0)"
+    </g>
+   </svg>
   <script src="https://d3js.org/d3.v4.js"></script>
   <script>
-    d3.selectAll('li').on('click', function(d, i) {
+    d3.selectAll('li').on('click', function() {
       var listItem = d3.select(d3.event.target);
       var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
       listItem.style('color', randomColor);
